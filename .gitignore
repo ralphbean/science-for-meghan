@@ -5,7 +5,6 @@ ez_setup
 tw2*
 virtualenv-apply
 *.db*
-data
 build
 dist
 apply/public/photos/*.jpg

@@ -7,6 +7,9 @@ from pygame.locals import *
 if not pygame.font: print 'Warning, fonts disabled'
 if not pygame.mixer: print 'Warning, sound disabled'
 
+CHIMP_IMG = 'chimp.bmp'
+FIST_IMG = 'fist.bmp'
+
 def load_image(name, colorkey=None):
     fullname = os.path.join('data', name)
     try:
@@ -39,7 +42,7 @@ class Fist(pygame.sprite.Sprite):
     """moves a clenched fist on the screen, following the mouse"""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self) #call Sprite initializer
-        self.image, self.rect = load_image('fist.bmp', -1)
+        self.image, self.rect = load_image(FIST_IMG, -1)
         self.punching = 0
 
     def update(self):
@@ -66,7 +69,7 @@ class Chimp(pygame.sprite.Sprite):
        monkey when it is punched."""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self) #call Sprite intializer
-        self.image, self.rect = load_image('chimp.bmp', -1)
+        self.image, self.rect = load_image(CHIMP_IMG, -1)
         screen = pygame.display.get_surface()
         self.area = screen.get_rect()
         self.rect.topleft = 10, 10
